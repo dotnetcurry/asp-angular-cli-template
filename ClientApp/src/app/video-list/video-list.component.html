@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Watched</th>
+      <th>Watch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let video of videos">
+      <td>{{video.title}}</td>
+      <td>{{video.genre}}</td>
+      <td>
+        <span *ngIf="video.watched">Yes</span>
+        <span *ngIf="!video.watched">No</span>
+      </td>
+      <td>
+        <a href="{{video.link}}" target="_blank" (click)="watch(video)">Watch Video</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
